@@ -10,5 +10,9 @@
  * @returns {String} The file extension (with no period), or false if there is none.
  */
 export default function getFileExtension(filename) {
-  
+  if (filename.indexOf('.') === -1){
+    return false;
+  } else {
+    return filename.split('.').pop();
+  }
 }
