@@ -10,5 +10,15 @@
  * @returns {String} The longest string from within the input array.
  */
 export default function longestString(strings) {
-  
+  var greatestLength = 0;
+  var longest = "";
+  strings.forEach(function(string){
+    if (typeof string === 'string'){
+      if (string.length > greatestLength){
+        greatestLength = string.length;
+        longest = string;
+      }
+    }
+  });
+  return longest;
 }
