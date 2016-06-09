@@ -15,5 +15,13 @@
  * @returns {Number} The sum of all integers contained in the input, at any level.
  */
 export default function arraySum(array) {
-  
+  var sum = 0;
+  array.forEach(function(i){
+    if (typeof(i) === 'number'){
+      sum += i;
+    } else if (Array.isArray(i)) {
+      sum += arraySum(i);
+    }
+  });
+  return sum;
 }
